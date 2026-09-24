@@ -1,6 +1,6 @@
 # Engineering Solution Pivot
 
-**A deep-reasoning escalation skill for Claude Code — for when the obvious engineering path is exhausted.**
+**A deep-reasoning escalation skill for Claude Code, for when the obvious engineering path is exhausted or is about to become expensive.**
 
 Engineering Solution Pivot is **not** a default workflow. For normal engineering work, keep using normal development, debugging, architecture, testing, and documentation practices.
 
@@ -17,6 +17,11 @@ STUCK / HIGH-COMPLEXITY / NON-OBVIOUS PROBLEM
 ---
 
 ## When to reach for it
+
+There are two moments to use it:
+
+- **Proactively:** before a difficult technical path becomes expensive. Use it when a plan already shows warning signs, such as needing a security exception, depending on undocumented behavior, or growing effort estimates.
+- **Reactively:** when the current approach is blocked or keeps failing.
 
 Use it when:
 

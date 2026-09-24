@@ -1,11 +1,13 @@
 ---
 name: engineering-solution-pivot
-description: Deep-reasoning escalation method, not a default workflow, for engineering problems where the obvious path is exhausted. It is evidence-driven, escapes blocked or thrashing approaches, and challenges designs, constraints, and assumptions — including transforming a constraint rather than working around it. Use when the same causal hypothesis has failed twice; a workaround is growing more complex than the problem it solves; a constraint, dependency, platform limit, or security control appears to make the goal impossible; a request is framed as "do X using Y" and Y may not be required; an architecture, migration, or design decision carries significant security, reliability, performance, or cost trade-offs; or the user asks for alternative approaches, a devil's-advocate or adversarial review of a technical plan, an engineering pivot, or invokes /engineering-solution-pivot. Not for routine tasks with a clear, working path.
+description: Deep-reasoning escalation method, not a default workflow, for engineering problems where the obvious path is exhausted or is heading toward a dead end or an expensive path. It is evidence-driven, escapes blocked or thrashing approaches, and challenges designs, constraints, and assumptions — including transforming a constraint rather than working around it. Use when the same causal hypothesis has failed twice; a workaround is growing more complex than the problem it solves; a constraint, dependency, platform limit, or security control appears to make the goal impossible; a request is framed as "do X using Y" and Y may not be required; an architecture, migration, or design decision carries significant security, reliability, performance, or cost trade-offs; or the user asks for alternative approaches, a devil's-advocate or adversarial review of a technical plan, an engineering pivot, or invokes /engineering-solution-pivot. Not for routine tasks with a clear, working path.
+metadata:
+  version: "1.0.0"
 ---
 
 # Engineering Solution Pivot
 
-A deep-reasoning escalation method for technical problems where the obvious path is exhausted — blocked, failing, or suspiciously complex — and for stress-testing important designs before committing to them.
+A deep-reasoning escalation method for technical problems where the obvious path is exhausted — blocked, failing, or suspiciously complex — or is heading toward a hidden constraint, a dead end, or an expensive path, and for stress-testing important designs before committing to them.
 
 This is not the default workflow. Normal engineering work uses normal development, debugging, and design practices. Apply this method deliberately, when those practices stop producing progress or when a decision warrants deeper, more skeptical analysis. It trades speed for depth, but not for rigor: it does not brainstorm endlessly, does not propose alternatives without evidence, and does not treat every problem as an architectural crisis.
 
@@ -21,10 +23,16 @@ This is not the default workflow. Normal engineering work uses normal developmen
 
 ## When to use it — and when not
 
+There are two points at which to intervene:
+
+- **Early:** a plan or design shows warning signs before significant effort has been committed. Apply the method proportionally — usually stages 1, 4, 5, and 7 — while changing course is still cheap.
+- **Deep:** the work is already blocked, keeps failing, or is technically unconventional. Start from the checkpoint (stage 0) and diagnosis (stage 3).
+
 Use it when there is evidence of one of these conditions:
 
 | Signal | What counts | What does not count |
 |---|---|---|
+| **Early warning in a plan** | Before implementation begins, the plan needs a security exception or elevated privilege, depends on undocumented behavior, or its effort estimates keep growing | Complexity that is inherent to the problem and has a supported path |
 | **Repeated failure** | The same causal hypothesis has failed twice (for example, two variations of the same config change for the same assumed cause) | Transient failures; failures with unrelated causes; a retry that deliberately tests a *new* hypothesis |
 | **Workaround growth** | Each fix adds components, special cases, privileges, or manual steps; the workaround is becoming more complex than the original problem | A single necessary adapter with a clear owner |
 | **Apparent impossibility** | Documentation shows no path, a dependency lacks a feature, or a platform/security limit blocks the approach | A limit that has been verified as hard *and* whose removal has already been evaluated |
