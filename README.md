@@ -1,3 +1,14 @@
+# Claude Code skills
+
+## Skills in this repository
+
+| Skill | What it is for | Docs |
+|---|---|---|
+| `engineering-solution-pivot` | Deep-reasoning escalation when the obvious engineering path is exhausted | [below](#engineering-solution-pivot) |
+| `session-handoff` | Evidence-based session close-out: records what was done, decided, and left, so the next session continues without re-asking | [skills/session-handoff](skills/session-handoff/README.md) |
+
+---
+
 # Engineering Solution Pivot
 
 **A deep-reasoning escalation skill for Claude Code, for when the obvious engineering path is exhausted or is about to become expensive.**
@@ -154,6 +165,9 @@ You can also ask for it in plain language, for example *"we're stuck, give me a 
 skills/
   engineering-solution-pivot/
     SKILL.md      # triggers, reasoning model, agent rules, output format, examples
+  session-handoff/
+    SKILL.md      # close-out protocol, handoff format, decisions log
+    README.md     # what it does, design choices, install
 LICENSE
 README.md
 ```
